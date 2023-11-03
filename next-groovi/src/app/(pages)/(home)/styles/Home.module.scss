@@ -1,0 +1,13 @@
+@use "/src/app/styles/_colors";
+
+.body {
+    margin: 0px;
+}
+
+.home {
+    background-color: colors.$primary_background;
+    width: 100vw;
+    height: 100vh;
+    margin: 0em;
+    padding: 0em;
+}

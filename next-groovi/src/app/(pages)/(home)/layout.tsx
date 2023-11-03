@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import styles from "./styles/Home.module.scss"
 
 export const metadata: Metadata = {
     title: 'Groovi',
@@ -16,7 +13,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className={styles.body}>{children}</body>
         </html>
     )
 }
