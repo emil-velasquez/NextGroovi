@@ -1,0 +1,62 @@
+@use "/src/styles/_colors";
+@use "/src/styles/_decorations";
+
+.buttonContainer {
+    display: flex;
+    height: fit-content;
+}
+
+.primaryButton {
+    transition: all 0.1s;
+    @include decorations.outline();
+    box-shadow: 0rem 0.3rem colors.$tertiary-background, 0rem 0.4rem colors.$quaternary-background;
+    color: colors.$white;
+
+    &:hover {
+        background-color: colors.$hover-button;
+
+        &:active {
+            margin-top: 0.4rem;
+            margin-bottom: -0.4rem;
+            box-shadow: none;
+        }
+    }
+}
+
+.secondaryButton {
+    background-color: colors.$secondary-background;
+    border-radius: 8px;
+    border: colors.$secondary-background solid 0.1rem;
+    color: colors.$white;
+
+    &:hover {
+        background-color: colors.$hover-button;
+        border: colors.$hover-button solid 0.1rem;
+
+        &:active {
+            border: colors.$white solid 0.1rem;
+        }
+    }
+}
+
+@mixin hoverText {
+    border-radius: 8px;
+    background-color: colors.$tertiary-background;
+    padding: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.hoverTextLeft {
+    @include hoverText();
+    position: absolute;
+    left: 0.5rem;
+}
+
+
+.hoverTextRight {
+    @include hoverText();
+    position: relative;
+    left: 0.5rem;
+}
