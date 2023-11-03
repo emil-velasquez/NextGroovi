@@ -1,10 +1,7 @@
 @use "/src/styles/_colors";
+@use "/src/styles/_decorations";
 
 .card {
-    background-color: colors.$secondary-background;
-    border: colors.$white solid 0.15rem;
-    border-radius: 8px;
+    @include decorations.outline();
     box-shadow: -0.2rem 0.2rem colors.$tertiary-background, -0.3rem 0.3rem colors.$quaternary-background;
-    width: fit-content;
-    height: fit-content;
 }
