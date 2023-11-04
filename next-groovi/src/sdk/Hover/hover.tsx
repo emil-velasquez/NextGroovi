@@ -20,7 +20,8 @@ export default function Hover(props: HoverProps) {
     const [isHovering, setIsHovering] = useState(false);
 
     return (
-        <div onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className={styles.hoverContainer}>
+        <div onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
+            className={styles.hoverContainer}>
             {children}
             {showHover && isHovering &&
                 <div className={hoverStyle}>

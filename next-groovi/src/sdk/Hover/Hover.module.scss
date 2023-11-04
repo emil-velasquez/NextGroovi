@@ -3,6 +3,7 @@
 .hoverContainer {
     display: flex;
     height: fit-content;
+    align-items: center;
 }
 
 @mixin hoverText {
@@ -10,19 +11,19 @@
     background-color: colors.$tertiary-background;
     padding: 0.5rem;
     width: fit-content;
-    height: fit-content;
+    height: 1rem;
     margin: auto;
 }
 
 .hoverTextLeft {
     @include hoverText();
     position: absolute;
-    left: 0.5rem;
+    right: 95%
 }
 
 
 .hoverTextRight {
     @include hoverText();
-    position: relative;
-    left: 0.5rem;
+    position: absolute;
+    left: 95%;
 }
