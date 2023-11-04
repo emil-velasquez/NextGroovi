@@ -6,6 +6,7 @@ import React, { useState } from "react"
 import Logo from "./logo"
 import MainActionBar from "./main-action-bar"
 import PlaylistBar from "./playlist-bar"
+import Gap from "@/sdk/Gap/gap"
 
 export default function NavigationBar() {
     const [isHovering, setIsHovering] = useState(false);
@@ -16,11 +17,11 @@ export default function NavigationBar() {
         <div onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
             className={styles.navBar} style={{ overflowY }}>
             <Logo />
-            <div className={styles.gap} />
+            <Gap gapSize={0.75} />
             <MainActionBar />
-            <div className={styles.gap} />
+            <Gap gapSize={0.75} />
             <PlaylistBar />
-            <div className={styles.gap} />
+            <Gap gapSize={0.75} />
         </div>
     )
 }

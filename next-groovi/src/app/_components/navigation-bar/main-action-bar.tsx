@@ -5,6 +5,7 @@ import styles from "../../_styles/navigation-bar/ActionBar.module.scss"
 
 import { BsHouseDoorFill, BsSuitHeartFill, BsFire } from "react-icons/bs"
 import Card from "@/sdk/Card/card"
+import Gap from "@/sdk/Gap/gap"
 
 interface MainActionOptionProps {
     children: React.ReactNode,
@@ -30,7 +31,7 @@ export default function MainActionBar() {
     return (
         <Card>
             <div className={styles.mainActionBar}>
-                <div className={styles.gap} />
+                <Gap gapSize={0.3} />
                 <MainActionOption address="/" hoverText="Home">
                     <BsHouseDoorFill className={styles.mainActionButton} />
                 </MainActionOption>
@@ -40,7 +41,7 @@ export default function MainActionBar() {
                 <MainActionOption address="/playlist/2" hoverText="Favorites">
                     <BsSuitHeartFill className={styles.mainActionButton} />
                 </MainActionOption>
-                <div className={styles.gap} />
+                <Gap gapSize={0.3} />
             </div>
         </Card>
     )

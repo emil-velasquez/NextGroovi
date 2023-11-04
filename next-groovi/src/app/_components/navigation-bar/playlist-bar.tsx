@@ -1,3 +1,4 @@
+import Gap from "@/sdk/Gap/gap";
 import styles from "../../_styles/navigation-bar/ActionBar.module.scss";
 
 import Card from "@/sdk/Card/card";
@@ -9,7 +10,7 @@ export default function PlaylistBar() {
     return (
         <Card>
             <div className={styles.mainActionBar}>
-                <div className={styles.gap} />
+                <Gap gapSize={0.3} />
                 <Hover hoverText="Playlists" hoverDirection="right">
                     <div className={styles.buttonContainer}>
                         <BsCollectionPlayFill className={styles.mainActionButton} />
