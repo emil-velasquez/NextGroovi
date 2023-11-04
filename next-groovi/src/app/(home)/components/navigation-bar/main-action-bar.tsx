@@ -10,7 +10,7 @@ export default function MainActionBar() {
 
     return (
         <div>
-            <Button onClick={test} priority="secondary" showHover={true} hoverText="test" hoverDirection="right">
+            <Button onClick={test} priority="secondary" hoverText="test">
                 <div className={styles.test}>
                     test
                 </div>
