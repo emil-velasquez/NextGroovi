@@ -2,10 +2,14 @@
 
 .body {
     margin: 0px;
+    background-color: colors.$primary_background;
+    color: colors.$white
 }
 
 .home {
-    background-color: colors.$primary_background;
+    position: fixed;
+    left: calc(3.75rem + 0.1rem + 0.75rem);
+
     width: 100vw;
     height: 100vh;
     margin: 0em;

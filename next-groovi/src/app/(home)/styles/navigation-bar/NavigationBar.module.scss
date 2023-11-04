@@ -1,0 +1,11 @@
+@use "/src/styles/_colors";
+
+.navBar {
+    position: fixed;
+    left: 0px;
+    width: 3.75rem;
+    height: 100vh;
+    padding-left: 0.75rem;
+    padding-top: 0.5rem;
+    border-right: colors.$tertiary-background 0.1rem solid;
+}
