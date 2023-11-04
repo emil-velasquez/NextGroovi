@@ -1,5 +1,17 @@
 @use "/src/styles/_colors";
 
+html {
+    font-family: var(--font-nunito)
+}
+
+button {
+    font-family: var(--font-nunito);
+}
+
+input {
+    font-family: var(--font-nunito);
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 7px;

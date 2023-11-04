@@ -1,8 +1,10 @@
 @use "/src/styles/_colors";
-@use "./navigation-bar/NavigationBar.module.scss";
+@use "./top-bar/TopBar.module.scss";
 
-$home-horizontal-offset: calc(NavigationBar.$navbar-width + NavigationBar.$navbar-padding-left + 0.5rem);
-$home-width: calc(100vw - $home-horizontal-offset);
+$home-horizontal-offset: TopBar.$horizontal-offset;
+$home-width: TopBar.$bar-width;
+$home-vertical-offset: TopBar.$bar-height + TopBar.$bar-padding-top + 0.5rem;
+$home-height: calc(100vh - $home-vertical-offset);
 
 .body {
     margin: 0px;
@@ -12,10 +14,10 @@ $home-width: calc(100vw - $home-horizontal-offset);
 
 .home {
     position: fixed;
+    top: $home-vertical-offset;
     left: $home-horizontal-offset;
-
     width: $home-width;
-    height: 100vh;
+    height: $home-height;
     margin: 0rem;
     padding: 0rem;
 }
