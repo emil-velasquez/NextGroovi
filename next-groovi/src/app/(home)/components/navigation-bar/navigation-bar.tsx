@@ -7,7 +7,9 @@ export default function NavigationBar() {
     return (
         <div className={styles.navBar}>
             <Logo />
+            <div className={styles.gap} />
             <MainActionBar />
+            <div className={styles.gap} />
             <PlaylistBar />
         </div>
     )
