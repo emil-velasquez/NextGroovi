@@ -1,4 +1,4 @@
-import styles from "../../styles/navigation-bar/Logo.module.scss"
+import styles from "../../_styles/navigation-bar/Logo.module.scss"
 import Card from "@/sdk/Card/card"
 
 import { BsDiscFill } from "react-icons/bs"

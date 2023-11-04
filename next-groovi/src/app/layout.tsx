@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
 import { Nunito } from "next/font/google"
-import styles from "./styles/Home.module.scss"
-import "./styles/Home.scss"
+import styles from "./_styles/Home.module.scss"
+import "./_styles/Home.scss"
 
-import NavigationBar from './components/navigation-bar/navigation-bar'
+import NavigationBar from './_components/navigation-bar/navigation-bar'
 
 export const metadata: Metadata = {
     title: 'Groovi',

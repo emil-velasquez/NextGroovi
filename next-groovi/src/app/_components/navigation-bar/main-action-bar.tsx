@@ -1,7 +1,7 @@
 "use client"
 
 import NavLink from "@/sdk/NavLink/navlink"
-import styles from "../../styles/navigation-bar/MainActionBar.module.scss"
+import styles from "../../_styles/navigation-bar/MainActionBar.module.scss"
 
 import { BsHouseDoorFill, BsSuitHeartFill, BsFire } from "react-icons/bs"
 import Card from "@/sdk/Card/card"

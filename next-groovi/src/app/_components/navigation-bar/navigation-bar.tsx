@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "../../styles/navigation-bar/NavigationBar.module.scss"
+import styles from "../../_styles/navigation-bar/NavigationBar.module.scss"
 import React, { useState } from "react"
 
 import Logo from "./logo"
