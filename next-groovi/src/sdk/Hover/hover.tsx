@@ -16,7 +16,6 @@ export default function Hover(props: HoverProps) {
     const mousePosition = useMousePosition();
 
     if (showHover == undefined) showHover = true;
-    if (hoverText == undefined) hoverText = "";
     if (hoverDirection == undefined) hoverDirection = "left";
 
     const shift = hoverDirection === "left" ? " - 1rem" : " + 1rem";
@@ -29,7 +28,7 @@ export default function Hover(props: HoverProps) {
         <div onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
             className={styles.hoverContainer}>
             {children}
-            {showHover && isHovering &&
+            {showHover && isHovering && hoverText !== undefined &&
                 <div className={styles.hoverText} style={{ left, top }}>
                     <text>{hoverText}</text>
                 </div>}
