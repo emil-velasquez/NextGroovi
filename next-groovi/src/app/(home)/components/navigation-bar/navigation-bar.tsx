@@ -11,6 +11,7 @@ export default function NavigationBar() {
             <MainActionBar />
             <div className={styles.gap} />
             <PlaylistBar />
+            <div className={styles.gap} />
         </div>
     )
 }
