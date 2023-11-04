@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { Nunito } from "next/font/google"
 import styles from "./styles/Home.module.scss"
+import "./styles/Home.scss"
 
 import NavigationBar from './components/navigation-bar/navigation-bar'
 

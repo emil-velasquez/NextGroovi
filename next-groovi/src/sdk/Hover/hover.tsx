@@ -19,10 +19,10 @@ export default function Hover(props: HoverProps) {
     if (hoverText == undefined) hoverText = "";
     if (hoverDirection == undefined) hoverDirection = "left";
 
-    const shift = hoverDirection === "left" ? " - 2rem" : " + 2rem";
+    const shift = hoverDirection === "left" ? " - 1rem" : " + 1rem";
 
     const left = `calc(${mousePosition.x}px` + shift;
-    const top = `calc(${mousePosition.y}px - 0.75rem)`
+    const top = `calc(${mousePosition.y}px - 2rem)`
     const [isHovering, setIsHovering] = useState(false);
 
     return (
