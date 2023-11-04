@@ -1,0 +1,28 @@
+@use "/src/styles/_colors";
+
+.hoverContainer {
+    display: flex;
+    height: fit-content;
+}
+
+@mixin hoverText {
+    border-radius: 8px;
+    background-color: colors.$tertiary-background;
+    padding: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.hoverTextLeft {
+    @include hoverText();
+    position: absolute;
+    left: 0.5rem;
+}
+
+
+.hoverTextRight {
+    @include hoverText();
+    position: relative;
+    left: 0.5rem;
+}
