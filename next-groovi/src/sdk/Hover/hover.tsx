@@ -1,5 +1,6 @@
 "use client"
 
+import useMousePosition from "@/hooks/useMousePostion";
 import styles from "./Hover.module.scss"
 import React, { useState } from "react";
 
@@ -12,11 +13,16 @@ interface HoverProps {
 
 export default function Hover(props: HoverProps) {
     let { showHover, hoverText, hoverDirection, children } = props;
+    const mousePosition = useMousePosition();
+
     if (showHover == undefined) showHover = true;
     if (hoverText == undefined) hoverText = "";
     if (hoverDirection == undefined) hoverDirection = "left";
 
-    const hoverStyle = hoverDirection == "left" ? styles.hoverTextLeft : styles.hoverTextRight;
+    const shift = hoverDirection === "left" ? " - 2rem" : " + 2rem";
+
+    const left = `calc(${mousePosition.x}px` + shift;
+    const top = `calc(${mousePosition.y}px - 0.75rem)`
     const [isHovering, setIsHovering] = useState(false);
 
     return (
@@ -24,7 +30,7 @@ export default function Hover(props: HoverProps) {
             className={styles.hoverContainer}>
             {children}
             {showHover && isHovering &&
-                <div className={hoverStyle}>
+                <div className={styles.hoverText} style={{ left, top }}>
                     <text>{hoverText}</text>
                 </div>}
         </div>

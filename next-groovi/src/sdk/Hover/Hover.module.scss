@@ -6,7 +6,8 @@
     align-items: center;
 }
 
-@mixin hoverText {
+.hoverText {
+    position: fixed;
     border-radius: 8px;
     background-color: colors.$tertiary-background;
     padding: 0.25rem 0.5rem;
@@ -14,17 +15,4 @@
     height: fit-content;
     margin: auto;
     font-size: 1.25rem;
-}
-
-.hoverTextLeft {
-    @include hoverText();
-    position: absolute;
-    right: 100%
-}
-
-
-.hoverTextRight {
-    @include hoverText();
-    position: absolute;
-    left: 100%;
 }
