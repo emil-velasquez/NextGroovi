@@ -3,7 +3,7 @@
 import NavLink from "@/sdk/NavLink/navlink"
 import styles from "../../styles/navigation-bar/MainActionBar.module.scss"
 
-import { BsFillHouseFill, BsSuitHeartFill, BsFire } from "react-icons/bs"
+import { BsHouseDoorFill, BsSuitHeartFill, BsFire } from "react-icons/bs"
 import Card from "@/sdk/Card/card"
 
 interface MainActionOptionProps {
@@ -32,7 +32,7 @@ export default function MainActionBar() {
             <div className={styles.mainActionBar}>
                 <div className={styles.gap} />
                 <MainActionOption address="/" hoverText="Home">
-                    <BsFillHouseFill className={styles.mainActionButton} />
+                    <BsHouseDoorFill className={styles.mainActionButton} />
                 </MainActionOption>
                 <MainActionOption address="/playlist/1" hoverText="Trending">
                     <BsFire className={styles.mainActionButton} />
