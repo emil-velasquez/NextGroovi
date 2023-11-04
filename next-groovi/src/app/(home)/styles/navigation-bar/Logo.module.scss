@@ -1,15 +1,15 @@
 @use "/src/styles/_colors";
 
 .logoContainer {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 3.5rem;
+    height: 3.5rem;
     display: flex;
     justify-content: center;
 
     .logo {
         color: colors.$primary-brand;
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
         margin: auto;
     }
 }
