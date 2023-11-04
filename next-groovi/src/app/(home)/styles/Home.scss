@@ -13,10 +13,5 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: colors.$tertiary-background;
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: colors.$fifth-background;
+    border-radius: 0.5rem;
 }
