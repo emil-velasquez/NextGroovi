@@ -27,7 +27,9 @@ export default function RootLayout(props: LayoutProps) {
         <html lang="en" className={nunito.className}>
             <body className={styles.body}>
                 <NavigationBar />
-                {children}
+                <div className={styles.home}>
+                    {children}
+                </div>
             </body>
         </html>
     )

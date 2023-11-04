@@ -1,6 +1,9 @@
 @use "/src/styles/_colors";
 @use "./navigation-bar/NavigationBar.module.scss";
 
+$home-horizontal-offset: calc(NavigationBar.$navbar-width + NavigationBar.$navbar-padding-left + 0.5rem);
+$home-width: calc(100vw - $home-horizontal-offset);
+
 .body {
     margin: 0px;
     background-color: colors.$primary_background;
@@ -9,9 +12,9 @@
 
 .home {
     position: fixed;
-    left: calc(NavigationBar.$navbar-width + NavigationBar.$navbar-padding-left + 0.5rem);
+    left: $home-horizontal-offset;
 
-    width: 100vw;
+    width: $home-width;
     height: 100vh;
     margin: 0em;
     padding: 0em;
