@@ -1,0 +1,25 @@
+@use "/src/styles/_colors";
+
+.navButton {
+    background-color: colors.$secondary-background;
+    border-radius: 8px;
+    border: colors.$secondary-background solid 0.1rem;
+    color: colors.$white;
+
+    &:hover {
+        background-color: colors.$hover-button;
+        border: colors.$hover-button solid 0.1rem;
+
+        &:active {
+            border: colors.$white solid 0.1rem;
+        }
+    }
+}
+
+.active {
+    background-color: colors.$tertiary-background !important;
+
+    &:hover {
+        border: colors.$tertiary-background solid 0.1rem !important;
+    }
+}
