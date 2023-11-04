@@ -1,0 +1,17 @@
+@use "/src/styles/_colors";
+@use "../navigation-bar/NavigationBar.module.scss";
+
+$horizontal-offset: calc(NavigationBar.$navbar-width + NavigationBar.$navbar-padding-left + 0.5rem);
+$bar-width: calc(100vw - $horizontal-offset);
+$bar-height: 3rem;
+$bar-padding-top: 0.5rem;
+
+.topBarContainer {
+    position: fixed;
+    top: 0px;
+    left: $horizontal-offset;
+    width: $bar-width;
+    height: $bar-height;
+    padding-top: $bar-padding-top;
+    z-index: 999;
+}
