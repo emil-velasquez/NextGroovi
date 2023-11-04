@@ -20,6 +20,6 @@
     background-color: colors.$tertiary-background !important;
 
     &:hover {
-        border: colors.$tertiary-background solid 0.1rem !important;
+        border: colors.$tertiary-background solid 0.1rem;
     }
 }
