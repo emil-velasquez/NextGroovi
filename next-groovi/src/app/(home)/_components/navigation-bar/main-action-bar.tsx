@@ -35,7 +35,7 @@ export default function MainActionBar() {
                 <MainActionOption address="/" hoverText="Home">
                     <BsHouseDoorFill className={styles.mainActionButton} />
                 </MainActionOption>
-                <MainActionOption address="/learn" hoverText="Trending">
+                <MainActionOption address="/playlist/1" hoverText="Trending">
                     <BsFire className={styles.mainActionButton} />
                 </MainActionOption>
                 <MainActionOption address="/playlist/2" hoverText="Favorites">
