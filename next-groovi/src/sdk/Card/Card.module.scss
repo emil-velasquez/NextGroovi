@@ -3,5 +3,5 @@
 
 .card {
     @include decorations.outline();
-    box-shadow: -0.2rem 0.2rem colors.$tertiary-background, -0.3rem 0.3rem colors.$quaternary-background;
+    @include decorations.bottomLeftShadow();
 }

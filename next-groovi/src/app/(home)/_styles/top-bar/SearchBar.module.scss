@@ -5,7 +5,7 @@ $width: 20rem;
 
 .searchBarContainer {
     @include decorations.outline();
-    box-shadow: 0rem 0.3rem colors.$tertiary-background, 0rem 0.4rem colors.$quaternary-background;
+    @include decorations.bottomShadow();
     width: $width;
     height: 2.5rem;
     position: absolute;

@@ -4,7 +4,7 @@
 .primaryButton {
     transition: all 0.1s;
     @include decorations.outline();
-    box-shadow: 0rem 0.3rem colors.$tertiary-background, 0rem 0.4rem colors.$quaternary-background;
+    @include decorations.bottomShadow();
     color: colors.$white;
 
     &:hover {

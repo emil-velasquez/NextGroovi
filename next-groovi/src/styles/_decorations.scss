@@ -7,3 +7,11 @@
     width: fit-content;
     height: fit-content;
 }
+
+@mixin bottomShadow {
+    box-shadow: 0rem 0.3rem colors.$tertiary-background, 0rem 0.4rem colors.$quaternary-background;
+}
+
+@mixin bottomLeftShadow {
+    box-shadow: -0.2rem 0.2rem colors.$tertiary-background, -0.3rem 0.3rem colors.$quaternary-background;
+}
