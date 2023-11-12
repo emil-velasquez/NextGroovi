@@ -4,13 +4,17 @@ import Gap from "@/sdk/Gap/gap"
 import styles from "../../_styles/top-bar/ProfileButtons.module.scss"
 import Button from "@/sdk/Button/button"
 
+import { useRouter } from "next/navigation";
+
 export default function ProfileButtons() {
+    const router = useRouter();
+
     function redirectToLoginPage() {
-        console.log("heading to login page")
+        router.push("/auth/login");
     }
 
     function redirectToRegisterPage() {
-        console.log("heading to register page")
+        router.push("/auth/register")
     }
 
     function redirectToProfilePage() {
