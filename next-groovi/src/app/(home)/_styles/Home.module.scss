@@ -6,12 +6,6 @@ $home-width: TopBar.$bar-width;
 $home-vertical-offset: TopBar.$bar-height + TopBar.$bar-padding-top + 0.5rem;
 $home-height: calc(100vh - $home-vertical-offset);
 
-.body {
-    margin: 0px;
-    background-color: colors.$primary_background;
-    color: colors.$white
-}
-
 .home {
     position: fixed;
     top: $home-vertical-offset;

@@ -1,8 +1,10 @@
-export default function LearnLayout({
-    children, // will be a page or nested layout
-}: {
+interface LearnLayoutProps {
     children: React.ReactNode
-}) {
+}
+
+export default function LearnLayout(props: LearnLayoutProps) {
+    const { children } = props;
+
     return (
         <section>
             {children}
