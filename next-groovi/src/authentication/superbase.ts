@@ -1,12 +1,15 @@
 import { createBrowserClient, createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers"
 
+// for use in client components
 export const clientSupabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
 const cookieStore = cookies()
+
+// for use in server components (only has read access to cookies)
 export const serverSupabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -19,6 +22,8 @@ export const serverSupabase = createServerClient(
     }
 )
 
+// for use in API routes (ie GET, POST, etc.)
+// also for server actions
 export const routeSupabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
