@@ -16,13 +16,11 @@ export default function PlaylistBar() {
                         <BsCollectionPlayFill className={styles.mainActionButton} />
                     </div>
                 </Hover>
-                <div className={styles.optionContainer}>
-                    <NavLink address="/playlist" hoverText="Create new playlist" hoverDirection="right">
-                        <div className={styles.buttonContainer}>
-                            <BsFillPlusSquareFill className={styles.mainActionButton} />
-                        </div>
-                    </NavLink>
-                </div>
+                <NavLink className={styles.optionContainer} address="/playlist" hoverText="Create new playlist" hoverDirection="right">
+                    <div className={styles.buttonContainer}>
+                        <BsFillPlusSquareFill className={styles.mainActionButton} />
+                    </div>
+                </NavLink>
             </div>
         </Card>
     )

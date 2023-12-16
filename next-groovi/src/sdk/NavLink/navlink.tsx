@@ -9,11 +9,12 @@ interface NavLinkProps {
     address: string,
     children: React.ReactNode,
     hoverText: string,
-    hoverDirection: "left" | "right"
+    hoverDirection: "left" | "right",
+    className?: string
 }
 
 export default function NavLink(props: NavLinkProps) {
-    const { address, children, hoverText, hoverDirection } = props;
+    const { address, children, hoverText, hoverDirection, className } = props;
     const router = useRouter();
     const pathname = usePathname();
 
@@ -21,10 +22,12 @@ export default function NavLink(props: NavLinkProps) {
     if (pathname === address) buttonStyles += `${styles.active}`
 
     return (
-        <Hover hoverText={hoverText} hoverDirection={hoverDirection}>
-            <button onClick={() => router.push(address)} className={buttonStyles}>
-                {children}
-            </button>
-        </Hover>
+        <div className={className}>
+            <Hover hoverText={hoverText} hoverDirection={hoverDirection}>
+                <button onClick={() => router.push(address)} className={buttonStyles}>
+                    {children}
+                </button>
+            </Hover>
+        </div>
     )
 }

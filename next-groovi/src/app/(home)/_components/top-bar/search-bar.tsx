@@ -24,13 +24,11 @@ export default function SearchBar() {
     return (
         <div className={styles.searchBarContainer}>
             <input type="text" className={styles.searchText} placeholder="Search" onChange={e => setSearchText(e.target.value)} onKeyDown={handleKeyDown} />
-            <div className={styles.searchButtonContainer}>
-                <Button onClick={onSubmit} priority="secondary">
-                    <div className={styles.searchButtonWrapper}>
-                        <BsSearch className={styles.searchButton} />
-                    </div>
-                </Button>
-            </div>
+            <Button className={styles.searchButtonContainer} onClick={onSubmit} priority="secondary">
+                <div className={styles.searchButtonWrapper}>
+                    <BsSearch className={styles.searchButton} />
+                </div>
+            </Button>
         </div>
     )
 }

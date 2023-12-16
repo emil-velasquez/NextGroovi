@@ -17,13 +17,11 @@ function MainActionOption(props: MainActionOptionProps) {
     const { children, address, hoverText } = props;
 
     return (
-        <div className={styles.optionContainer}>
-            <NavLink address={address} hoverText={hoverText} hoverDirection="right">
-                <div className={styles.buttonContainer}>
-                    {children}
-                </div>
-            </NavLink>
-        </div>
+        <NavLink className={styles.optionContainer} address={address} hoverText={hoverText} hoverDirection="right">
+            <div className={styles.buttonContainer}>
+                {children}
+            </div>
+        </NavLink>
     )
 }
 
