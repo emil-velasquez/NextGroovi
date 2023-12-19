@@ -3,7 +3,7 @@
 import styles from "../../_styles/navigation-bar/NavigationBar.module.scss"
 import React, { useState } from "react"
 
-import Logo from "./logo"
+import Logo from "../../../../sdk/Logo/logo"
 import MainActionBar from "./main-action-bar"
 import PlaylistBar from "./playlist-bar"
 import Gap from "@/sdk/Gap/gap"
@@ -16,7 +16,7 @@ export default function NavigationBar() {
     return (
         <div onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
             className={styles.navBar} style={{ overflowY }}>
-            <Logo />
+            <Logo size={2.5} />
             <Gap gapSize={0.75} />
             <MainActionBar />
             <Gap gapSize={0.75} />
