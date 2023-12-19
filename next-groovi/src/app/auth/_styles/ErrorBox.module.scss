@@ -1,0 +1,12 @@
+@use "/src/styles/_colors";
+
+.errorBoxContainer {
+    margin-top: 1rem;
+    border-radius: 1rem;
+    background-color: colors.$error;
+    width: 20rem;
+}
+
+.errorBoxList {
+    margin-left: -0.25rem;
+}
