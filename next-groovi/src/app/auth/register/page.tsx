@@ -8,18 +8,7 @@ import Button from "@/sdk/Button/button";
 import GoogleLoginButton from "../_components/GoogleLogin";
 import ErrorBox from "../_components/ErrorBox";
 
-interface FormInputProps {
-    children: React.ReactNode
-}
-
-function FormInput(props: FormInputProps) {
-    const { children } = props;
-    return (
-        <div className={styles.authTextInputContainer}>
-            {children}
-        </div>
-    )
-}
+import FormInput from "../_components/FormInput";
 
 export default function RegisterPage() {
     const router = useRouter();
