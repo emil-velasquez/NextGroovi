@@ -32,7 +32,7 @@ export default function RegisterPage() {
 
     const [errorText, setErrorText] = useState<string[]>([])
 
-    function onSubmit() {
+    async function onSubmit() {
         let newErrorText: string[] = []
 
         //check that email and username have at least one character
@@ -42,9 +42,23 @@ export default function RegisterPage() {
             validEmail = false
         }
 
+        //check email and username is unique
+        if (validEmail) {
+            const data = { email: emailText }
+            const response = await fetch("http://localhost:3000/auth/api/checkUniqueEmail", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            let result = await response.json();
+            result = result.errors;
+            for (const error of result) {
+                newErrorText = [...newErrorText, error]
+            }
+        }
+
         //checking that they submitted a name
         if (nameText.length === 0) {
-            newErrorText = [...newErrorText, "Must enter a name"]
+            newErrorText = [...newErrorText, "Enter a name"]
         }
 
         let validUsername = true
@@ -55,7 +69,16 @@ export default function RegisterPage() {
 
         //check email and username is unique
         if (validEmail && validUsername) {
-
+            const data = { username: usernameText }
+            const response = await fetch("http://localhost:3000/auth/api/checkUniqueUsername", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            let result = await response.json();
+            result = result.errors;
+            for (const error of result) {
+                newErrorText = [...newErrorText, error]
+            }
         }
 
         //check that password is between 6 and 72 characters
@@ -76,7 +99,6 @@ export default function RegisterPage() {
                 router.push(`/auth/confirmation?email=${emailText}`)
             } else {
                 //if sign up was not successful, display error message
-
             }
         } else {
             setErrorText(newErrorText)
