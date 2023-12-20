@@ -6,6 +6,7 @@
     @include decorations.outline();
     @include decorations.bottomShadow();
     color: colors.$white;
+    cursor: pointer;
 
     &:hover {
         background-color: colors.$hover-button;
@@ -23,6 +24,7 @@
     border-radius: 8px;
     border: colors.$secondary-background solid 0.1rem;
     color: colors.$white;
+    cursor: pointer;
 
     &:hover {
         background-color: colors.$hover-button;
