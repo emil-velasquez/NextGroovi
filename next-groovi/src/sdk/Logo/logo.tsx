@@ -15,10 +15,8 @@ export default function Logo(props: LogoProps) {
     const containerSizeStyle = { width: containerSize + "rem", height: containerSize + "rem" }
 
     return (
-        <Card>
-            <div className={styles.logoContainer} style={containerSizeStyle}>
-                <BsDiscFill className={styles.logo} style={logoStyle} />
-            </div>
-        </Card>
+        <div className={styles.logoContainer} style={containerSizeStyle}>
+            <BsDiscFill className={styles.logo} style={logoStyle} />
+        </div>
     )
 }
