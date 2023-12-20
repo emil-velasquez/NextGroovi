@@ -2,6 +2,7 @@
 import styles from "../_styles/Auth.module.scss";
 
 import React, { useState } from "react"
+import { useRouter } from "next/navigation";
 
 import Button from "@/sdk/Button/button";
 import GoogleLoginButton from "../_components/GoogleLogin";
@@ -21,6 +22,8 @@ function FormInput(props: FormInputProps) {
 }
 
 export default function RegisterPage() {
+    const router = useRouter();
+
     const [emailText, setEmailText] = useState("")
     const [nameText, setNameText] = useState("")
     const [usernameText, setUsernameText] = useState("")
@@ -32,7 +35,28 @@ export default function RegisterPage() {
     function onSubmit() {
         let newErrorText: string[] = []
 
+        //check that email and username have at least one character
+        let validEmail = true
+        if (emailText.length === 0 || emailText.indexOf("@") === -1) {
+            newErrorText = [...newErrorText, "Enter a valid email"]
+            validEmail = false
+        }
+
+        //checking that they submitted a name
+        if (nameText.length === 0) {
+            newErrorText = [...newErrorText, "Must enter a name"]
+        }
+
+        let validUsername = true
+        if (usernameText.length === 0) {
+            newErrorText = [...newErrorText, "Enter a valid username"]
+            validUsername = false
+        }
+
         //check email and username is unique
+        if (validEmail && validUsername) {
+
+        }
 
         //check that password is between 6 and 72 characters
         if (passwordText.length < 6 || passwordText.length > 72) {
@@ -47,10 +71,13 @@ export default function RegisterPage() {
         //check that we have no errors
         if (newErrorText.length == 0) {
             //attempt to sign up the new user 
+            if (true) {
+                //if sign up was successful, redirect to confirmation page
+                router.push(`/auth/confirmation?email=${emailText}`)
+            } else {
+                //if sign up was not successful, display error message
 
-            //if sign up was successful, redirect to confirmation page
-
-            //if sign up was not successful, display error message
+            }
         } else {
             setErrorText(newErrorText)
         }
