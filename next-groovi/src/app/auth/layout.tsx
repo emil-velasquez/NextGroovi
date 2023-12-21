@@ -1,5 +1,3 @@
-import "@/styles/globals.scss"
-
 interface AuthLayoutProps {
     children: React.ReactNode
 }

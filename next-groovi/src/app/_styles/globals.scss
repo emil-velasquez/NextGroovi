@@ -1,0 +1,35 @@
+@use "/src/styles/_colors";
+
+html {
+    font-family: var(--font-nunito)
+}
+
+body {
+    margin: 0px;
+    background-color: colors.$primary_background;
+    color: colors.$white
+}
+
+button {
+    font-family: var(--font-nunito);
+}
+
+input {
+    font-family: var(--font-nunito);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: colors.$tertiary-background;
+    border-radius: 0.5rem;
+}

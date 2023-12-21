@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { Nunito } from "next/font/google"
-import "@/styles/globals.scss"
+import "./_styles/globals.scss"
 
 export const metadata: Metadata = {
     title: 'Groovi',
