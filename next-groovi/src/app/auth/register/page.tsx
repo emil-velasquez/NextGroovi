@@ -9,6 +9,7 @@ import GoogleLoginButton from "../_components/GoogleLogin";
 import ErrorBox from "../_components/ErrorBox";
 
 import FormInput from "../_components/FormInput";
+import { sha256 } from "@/api/crypto";
 
 export default function RegisterPage() {
     const router = useRouter();
@@ -83,11 +84,22 @@ export default function RegisterPage() {
         //check that we have no errors
         if (newErrorText.length == 0) {
             //attempt to sign up the new user 
-            if (true) {
-                //if sign up was successful, redirect to confirmation page
+            const data = {
+                email: emailText,
+                password: await sha256(passwordText),
+                username: usernameText,
+                full_name: nameText
+            }
+            let result = await fetch("http://localhost:3000/auth/api/signUp", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            const { success, error } = await result.json();
+            if (success) {
                 router.push(`/auth/confirmation?email=${emailText}`)
             } else {
-                //if sign up was not successful, display error message
+                newErrorText = [...newErrorText, error]
+                setErrorText(newErrorText)
             }
         } else {
             setErrorText(newErrorText)
