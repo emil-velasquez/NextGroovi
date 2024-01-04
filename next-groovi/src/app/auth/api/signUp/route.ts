@@ -8,7 +8,7 @@ import { cookies } from "next/headers"
  * @returns result: {success: bool, error: string}
  */
 export async function POST(request: NextRequest) {
-    const { email, password, username, full_name } = await request.json();
+    const { email, password, username, full_name, captcha } = await request.json();
     const cookieStore = cookies();
     const routeSupabase = createRouteSupabase(cookieStore);
 
@@ -17,6 +17,7 @@ export async function POST(request: NextRequest) {
             email: email,
             password: password,
             options: {
+                captchaToken: captcha,
                 data: {
                     username: username,
                     full_name: full_name

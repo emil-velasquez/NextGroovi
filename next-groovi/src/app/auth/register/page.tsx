@@ -1,7 +1,7 @@
 "use client"
 import styles from "../_styles/Auth.module.scss";
 
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { useRouter } from "next/navigation";
 
 import Button from "@/sdk/Button/button";
@@ -9,7 +9,10 @@ import GoogleLoginButton from "../_components/GoogleLogin";
 import ErrorBox from "../_components/ErrorBox";
 
 import FormInput from "../_components/FormInput";
-import { sha256 } from "@/api/crypto";
+import { encryptMessage } from "@/api/crypto";
+
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import Gap from "@/sdk/Gap/gap";
 
 export default function RegisterPage() {
     const router = useRouter();
@@ -19,6 +22,9 @@ export default function RegisterPage() {
     const [usernameText, setUsernameText] = useState("")
     const [passwordText, setPasswordText] = useState("")
     const [verifyPasswordText, setVerifyPasswordText] = useState("")
+
+    const captcha = useRef<HCaptcha | null>(null)
+    const [captchaToken, setCaptchaToken] = useState("")
 
     const [errorText, setErrorText] = useState<string[]>([])
 
@@ -81,19 +87,27 @@ export default function RegisterPage() {
             newErrorText = [...newErrorText, "Passwords must match"]
         }
 
+        //check that the captcha was done
+        if (captchaToken.length === 0) {
+            newErrorText = [...newErrorText, "Please fill out captcha"]
+        }
+
         //check that we have no errors
         if (newErrorText.length == 0) {
             //attempt to sign up the new user 
             const data = {
                 email: emailText,
-                password: await sha256(passwordText),
+                password: await encryptMessage(passwordText),
                 username: usernameText,
-                full_name: nameText
+                full_name: nameText,
+                captcha: captchaToken
             }
             let result = await fetch("http://test.groo.vi:3000/auth/api/signUp", {
                 method: "POST",
                 body: JSON.stringify(data)
             })
+            captcha.current?.resetCaptcha();
+            setCaptchaToken("")
             const { success, error } = await result.json();
             if (success) {
                 router.push(`/auth/confirmation?email=${emailText}`)
@@ -130,6 +144,8 @@ export default function RegisterPage() {
                     <input type="password" className={styles.authTextInput} placeholder="Verify Password"
                         onChange={e => setVerifyPasswordText(e.target.value)} />
                 </FormInput>
+                <Gap gapSize={1.5} />
+                <HCaptcha ref={captcha} sitekey="f5e73916-933b-4095-ae30-0e5014531a5e" onVerify={(token) => { setCaptchaToken(token) }} />
                 <Button className={styles.authButton} onClick={onSubmit} priority="primary">
                     <h3 className={styles.buttonText}>Sign Up</h3>
                 </Button>
