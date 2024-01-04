@@ -33,9 +33,9 @@ export async function GET(request: NextRequest) {
                 })
 
             if (!addUserError) {
-                return NextResponse.redirect("http://localhost:3000/")
+                return NextResponse.redirect("http://test.groo.vi:3000/")
             }
         }
     }
-    return NextResponse.redirect("http://localhost:3000/auth/error")
+    return NextResponse.redirect("http://test.groo.vi:3000/auth/error")
 }

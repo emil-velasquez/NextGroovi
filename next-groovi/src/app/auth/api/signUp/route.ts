@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
                     username: username,
                     full_name: full_name
                 },
-                emailRedirectTo: "http://localhost:3000/auth/api/addUser"
+                emailRedirectTo: "http://test.groo.vi:3000/auth/api/addUser"
             }
         }
     )

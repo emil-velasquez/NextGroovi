@@ -35,7 +35,7 @@ export default function RegisterPage() {
         //check email and username is unique
         if (validEmail) {
             const data = { email: emailText }
-            const response = await fetch("http://localhost:3000/auth/api/checkUniqueEmail", {
+            const response = await fetch("http://test.groo.vi:3000/auth/api/checkUniqueEmail", {
                 method: "POST",
                 body: JSON.stringify(data)
             })
@@ -60,7 +60,7 @@ export default function RegisterPage() {
         //check email and username is unique
         if (validEmail && validUsername) {
             const data = { username: usernameText }
-            const response = await fetch("http://localhost:3000/auth/api/checkUniqueUsername", {
+            const response = await fetch("http://test.groo.vi:3000/auth/api/checkUniqueUsername", {
                 method: "POST",
                 body: JSON.stringify(data)
             })
@@ -90,7 +90,7 @@ export default function RegisterPage() {
                 username: usernameText,
                 full_name: nameText
             }
-            let result = await fetch("http://localhost:3000/auth/api/signUp", {
+            let result = await fetch("http://test.groo.vi:3000/auth/api/signUp", {
                 method: "POST",
                 body: JSON.stringify(data)
             })
