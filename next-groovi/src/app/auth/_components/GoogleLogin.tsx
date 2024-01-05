@@ -1,9 +1,27 @@
+"use client"
+
 // button html generated at https://developers.google.com/identity/branding-guidelines
 import "../_styles/GoogleLogin.scss"
 
+import { createClientSupabase } from "@/database/superbase"
+
+async function clickLoginButton() {
+    const supabase = createClientSupabase();
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+            queryParams: {
+                access_type: "offline",
+                prompt: "consent"
+            }
+        }
+    })
+}
+
 export default function GoogleLoginButton() {
     return (
-        <button className="gsi-material-button">
+        <button className="gsi-material-button" onClick={clickLoginButton}>
             <div className="gsi-material-button-state"></div>
             <div className="gsi-material-button-content-wrapper">
                 <div className="gsi-material-button-icon">
