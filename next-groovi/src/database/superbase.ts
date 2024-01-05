@@ -1,6 +1,5 @@
 import { createBrowserClient, createServerClient, type CookieOptions } from "@supabase/ssr";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
-import { getCookie, setCookie } from "cookies-next"
 
 // for use in client components
 export function createClientSupabase() {
